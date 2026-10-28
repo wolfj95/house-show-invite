@@ -1,0 +1,26 @@
+# Secrets — never commit
+credentials.txt
+.env
+.env.*
+*.pem
+*.key
+
+# Supabase CLI local state (if you ever use `supabase` CLI)
+supabase/.temp/
+supabase/.branches/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Logs / scratch
+*.log
+npm-debug.log*
+
+# Dependencies / build output (if a build step is ever added)
+node_modules/
+dist/
