@@ -18,47 +18,35 @@
   </svg>
 
   <main>
+    <!-- Event info: plain text above the form -->
+    <header class="intro">
+      <h1 class="title">SWEATER WEATHER</h1>
+      <p class="subtitle">An evening of live music in our living room</p>
+
+      <section class="info">
+        <h2>Details</h2>
+        <p><strong>When:</strong> Saturday, November 14, 2026<br>Doors 7:00 PM · Music 8:00 PM</p>
+        <p><strong>Where:</strong> 344 Summer St., #2, Somerville, MA 02144</p>
+        <p><strong>What else?</strong> Seasonal snacks and some drinks, but feel free to BYOB.</p>
+      </section>
+
+      <section class="info">
+        <h2>Lineup</h2>
+        <ul>
+          <li>Caro (Boleros and bossa nova)</li>
+          <li>Preston (Singer/Songwriter)</li>
+          <li>TBD</li>
+          <li>------</li>
+          <li>Open mic (that could be you!)</li>
+        </ul>
+      </section>
+    </header>
+
+    <!-- RSVP: the ramen order-sheet -->
     <form id="rsvp-form" novalidate>
       <div class="sheet">
-        <!-- Header -->
-        <header class="sheet-header">
-          <h1 class="title">SWEATER WEATHER</h1>
-          <h2 class="subtitle">An evening of live music in our living room.</h2>
-        </header>
-
-        <!-- Event details -->
-        <section class="block">
-          <h2 class="side-label info">Details</h2>
-          <div class="rows">
-            <div class="row">
-              <h3 class="key">When</h3>
-              <p class="value">Saturday, November 14, 2026<br>Doors 7:00 PM · Music 8:00 PM</p>
-            </div>
-            <div class="row">
-              <h3 class="key">Where</h3>
-              <p class="value">344 Summer St., #2, Somerville, MA 02144</p>
-            </div>
-            <div class="row">
-              <h3 class="key">What else?</h3>
-              <p class="value">We'll provide snacks and some drinks, but feel free to BYOB.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Lineup -->
-        <section class="block">
-          <h2 class="side-label info">Lineup</h2>
-          <div class="lineup">
-            <div class="act"><p class="act-name">[Performer 1]</p><p class="act-note">([genre])</p></div>
-            <div class="act"><p class="act-name">[Performer 2]</p><p class="act-note">([genre])</p></div>
-            <div class="act"><p class="act-name">[Performer 3]</p><p class="act-note">([genre])</p></div>
-            <div class="act"><p class="act-name">Open Mic</p><p class="act-note">(that could be you!)</p></div>
-          </div>
-        </section>
-
-        <!-- Divider between event info and the part guests fill out -->
         <div class="section-banner">
-          <h2>RSVP</h2>
+          <h2 class="title">RSVP</h2>
         </div>
 
         <!-- Contact -->
@@ -117,7 +105,7 @@
 
       <div class="submit">
         <p id="form-status" role="status" aria-live="polite"></p>
-        <button type="submit">Send RSVP!</button>
+        <button type="submit">Send RSVP</button>
       </div>
     </form>
   </main>

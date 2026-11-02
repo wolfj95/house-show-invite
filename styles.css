@@ -26,10 +26,13 @@ body {
 
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
   padding: 3rem 16px;
 }
 
+.intro,
 form { width: 100%; max-width: 500px; }
 
 p, h1, h2, h3 { margin: 0; }
@@ -46,41 +49,44 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
   border: 0;
 }
 
+/* EVENT INFO (plain text above the form)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.intro { text-align: center; }
+
+.title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: 1.875rem;
+  color: var(--red);
+  text-shadow: 0 4px 0 #000;
+  -webkit-text-stroke: 1px #000;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--gray-900);
+}
+
+.info { margin-top: 2rem; }
+.info h2 {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.info p + p { margin-top: 0.5rem; }
+.info ul { margin: 0; padding: 0; list-style: none; }
+
 /* SHEET
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .sheet {
   border: 8px solid var(--ink);
   background: #fff;
 }
-
-.sheet-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  text-align: center;
-  border-bottom: var(--rule);
-}
-
-.title {
-  font-family: var(--font-title);
-  font-weight: 400;
-  font-size: 1.875rem;
-  color: #fff;
-  text-shadow: 0 4px 0 #000;
-  -webkit-text-stroke: 1px #000;
-}
-
-.subtitle {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: var(--gray-900);
-}
-
-.fine-print { font-size: 0.875rem; color: var(--gray-600); }
 
 /* BLOCKS: vertical side label + rows of cells
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -106,25 +112,15 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
   text-transform: uppercase;
 }
 .side-label.dark { background: var(--ink); color: #fff; }
-/* Event info (read-only) sections */
-.side-label.info { background: #fff; color: var(--red); }
 
-/* Horizontal header: same thickness and type as the vertical side labels */
+/* Form header: its own white box, lettered like the page title */
 .section-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25px;
+  padding: 0.75rem 1rem 1rem;
+  text-align: center;
   border-bottom: var(--rule);
-  background: var(--ink);
-  color: #fff;
+  background: #fff;
 }
-.section-banner h2 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-}
+.section-banner .title { font-size: 1.625rem; }
 
 .rows { display: flex; flex-direction: column; }
 
@@ -148,39 +144,6 @@ fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
   color: var(--gray-600);
   text-align: center;
 }
-
-.value {
-  align-self: center;
-  padding: 0.75rem;
-  font-weight: 500;
-  color: var(--gray-900);
-}
-
-/* LINEUP
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.lineup {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.act {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0.75rem;
-  text-align: center;
-  border-bottom: var(--rule);
-}
-.act:nth-child(odd) { border-right: var(--rule); }
-.act:nth-last-child(-n + 2):nth-child(odd),
-.act:last-child { border-bottom: 0; }
-
-.act-name {
-  font-weight: 600;
-  text-transform: uppercase;
-  color: var(--gray-900);
-}
-.act-note { margin-top: 0.25rem; font-size: 0.875rem; color: var(--gray-600); }
 
 /* HANDWRITTEN INPUTS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -295,6 +258,7 @@ button:disabled { opacity: 0.6; cursor: default; }
 /* Small screens: solid red button like the original */
 @media (max-width: 639px) {
   .title { font-size: 1.5rem; }
+  .section-banner .title { font-size: 1.3rem; }
   .row { grid-template-columns: 64px 1fr; }
   button { background: var(--red); color: #fff; }
 }
