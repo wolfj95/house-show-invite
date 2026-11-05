@@ -37,6 +37,12 @@ Any static host works. For example, with Netlify, Vercel, or Cloudflare Pages:
 2. Add a custom domain such as `show.yourdomain.com` in the host's settings.
 3. At your DNS provider, add the `CNAME` record the host gives you (e.g. `show` → `your-site.netlify.app`).
 
+## Updating the live site
+
+After changing `styles.css`, `app.js` or `config.js`, bump the `?v=` number on
+their links in `index.html` (e.g. `?v=2` → `?v=3`) so browsers fetch the new
+file instead of a cached copy.
+
 ## Security notes
 
 The anon key is meant to be public. Row-level security only allows visitors to
